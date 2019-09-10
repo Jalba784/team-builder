@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import './App.css';
 
 
 const App = () => {
+  const initialTeam = {  };
+  const [team, setTeam] = useState(initialTeam);
   return (
       <div>
-        <p>Hello</p>
-        <p>World</p>
+        <p>React</p>
       </div>
   );
-}
+};
 
 export default App;
