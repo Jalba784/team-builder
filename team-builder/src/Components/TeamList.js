@@ -1,5 +1,14 @@
 import React from 'react';
 import TeamMember from "./TeamMember";
+import styled from "styled-components";
+
+const Card = styled.h1`
+    background-color: gray;
+    width: 50%;
+    padding: 10px 0px 10px 10%;
+    margin: 20px auto 0px auto;
+    border-radius: 10px;
+`;
 
 const TeamList = (props) => {
     return (
@@ -7,13 +16,15 @@ const TeamList = (props) => {
             {props.data.map((member, index) => {
                 const { name, nickname, role, email } = member;
                 return (
-                    <TeamMember
-                        key={index}
-                        name={name}
-                        nickname={nickname}
-                        role={role}
-                        email={email}
-                    />
+                    <Card>
+                        <TeamMember
+                            key={index}
+                            name={name}
+                            nickname={nickname}
+                            role={role}
+                            email={email}
+                        />
+                    </Card>
                 );
             })}
         </div>

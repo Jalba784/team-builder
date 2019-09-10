@@ -2,7 +2,6 @@ import React from 'react';
 
 const TeamMember = (props) => {
     const { name, nickname, role, email } = props;
-    console.log(props);
     return (
         <div>
             <h1>{name}</h1>

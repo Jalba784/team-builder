@@ -2,14 +2,24 @@ import React, { useState } from 'react';
 // import './App.css';
 import { AlphaTeam } from './Data.js'
 import TeamList from "./Components/TeamList";
+import styled from "styled-components";
 
+const Title = styled.div`
+  background-color: gray;
+  width: 30%;
+  color: white;
+  padding: 5px 0px 5px 7%;
+  margin: 20px auto 0px auto;
+  border-radius: 10px;
+`;
 
 const App = () => {
   const [team] = useState(AlphaTeam);
-  console.log(team);
   return (
       <div>
-        <p>React</p>
+        <Title>
+          <h1>React Team</h1>
+        </Title>
         <div>
           <TeamList data={team} />
         </div>
