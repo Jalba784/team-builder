@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 // import './App.css';
 import { AlphaTeam } from './Data.js'
+import TeamList from "./Components/TeamList";
 
 
 const App = () => {
-  const [team, setTeam] = useState(AlphaTeam);
+  const [team] = useState(AlphaTeam);
   console.log(team);
   return (
       <div>
         <p>React</p>
-        <div>{team.map((member, index) => member.name)}</div>
+        <div>
+          <TeamList data={team} />
+        </div>
       </div>
   );
 };
