@@ -37,16 +37,16 @@ const Create = (props) => {
                 <h2>New Team Member</h2>
                 <div className='input-stack'>
                     <label for='name'>Name</label>
-                    <input type='text' name='name' className='name' placeholder='John Smith' value={newMember.name} />
+                    <input type='text' name='name' className='name' onChange={handleChange} placeholder='John Smith' value={newMember.name}  />
                 </div>
                 <div className='input-stack'>
                     <label for='nickname'>Nickname</label>
-                    <input type='text' nickname='nickname' className='nickname' placeholder='Jonny' value={newMember.nickname} />
+                    <input type='text' name='nickname' className='nickname' onChange={handleChange} placeholder='Jonny' value={newMember.nickname}  />
                 </div>
                 <div className='input-stack'>
                     <label for='role'>Role</label>
-                    <select className='role'>
-                        <option>Any</option>
+                    <select className='role' onChange={handleChange}>
+                        <option>Choose One</option>
                         <option>Server Administrator</option>
                         <option>Quality Assurance Tester</option>
                         <option>Web Content Specialist</option>
@@ -59,7 +59,7 @@ const Create = (props) => {
                 </div>
                 <div className='input-stack'>
                     <label for='Email'>Email Address</label>
-                    <input type='text' name='email' className='email' placeholder='name123@email.com' value={newMember.email} />
+                    <input type='text' name='email' className='email' onChange={handleChange} placeholder='name123@email.com' value={newMember.email} />
                 </div>
                 </CenteredForm>
                 <Button className="formButton" type="submit" variant="dark">Submit</Button>
