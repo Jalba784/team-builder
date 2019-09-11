@@ -12,19 +12,36 @@ const CenteredForm = styled.div`
 const Create = (props) => {
     const initialMember = { name: "", nickname: "", role: "", email: "" };
     const [newMember, setNewMember] = useState(initialMember);
+
+    const handleChange = (event) => {
+        setNewMember({...newMember, [event.target.name]: event.target.value})
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        (!newMember.name || !newMember.email) ? alert("Name and Email are required!") : props.setMember([newMember, ...props.members]);
+
+        resetForm();
+    };
+
+    const resetForm = () => {
+        setNewMember(initialMember);
+    };
+
     return (
         <div>
             <Card>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <CenteredForm>
                 <h2>New Team Member</h2>
                 <div className='input-stack'>
                     <label for='name'>Name</label>
-                    <input type='text' name='name' className='name' placeholder='John Smith' />
+                    <input type='text' name='name' className='name' placeholder='John Smith' value={newMember.name} />
                 </div>
                 <div className='input-stack'>
                     <label for='nickname'>Nickname</label>
-                    <input type='text' nickname='nickname' className='nickname' placeholder='Jonny'/>
+                    <input type='text' nickname='nickname' className='nickname' placeholder='Jonny' value={newMember.nickname} />
                 </div>
                 <div className='input-stack'>
                     <label for='role'>Role</label>
@@ -42,11 +59,11 @@ const Create = (props) => {
                 </div>
                 <div className='input-stack'>
                     <label for='Email'>Email Address</label>
-                    <input type='text' name='email' className='email' placeholder='name123@email.com'/>
+                    <input type='text' name='email' className='email' placeholder='name123@email.com' value={newMember.email} />
                 </div>
                 </CenteredForm>
-                <Button className="formButton" variant="dark">Submit</Button>
-                <Button variant="dark">Reset</Button>
+                <Button className="formButton" type="submit" variant="dark">Submit</Button>
+                <Button type="button" onClick={resetForm} variant="dark">Reset</Button>
             </form>
             </Card>
         </div>
