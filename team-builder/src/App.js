@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { AlphaTeam } from './Data.js'
 import TeamList from "./Components/TeamList";
 import styled from "styled-components";
+import Create from "./Components/Create";
 
 const Title = styled.div`
   background-color: gray;
@@ -21,6 +22,7 @@ const App = () => {
           <h1>React Team</h1>
         </Title>
         <div>
+          <Create/>
           <TeamList data={team} />
         </div>
       </div>

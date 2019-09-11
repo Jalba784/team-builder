@@ -2,7 +2,7 @@ import React from 'react';
 import TeamMember from "./TeamMember";
 import styled from "styled-components";
 
-const Card = styled.h1`
+export const Card = styled.div`
     background-color: gray;
     width: 50%;
     padding: 10px 0px 10px 10%;
