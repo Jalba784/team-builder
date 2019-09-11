@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import '../App.css';
 import { Card } from './TeamList.js'
+import Button from "react-bootstrap/Button";
+import styled from "styled-components";
 
-// const FormStyle = styled.div`
-//     background-color: gray;
-//     width: 50%;
-//     padding: 10px 0px 10px 10%;
-//     margin: 20px auto 0px auto;
-//     border-radius: 10px;
-// `;
+const CenteredForm = styled.div`
+    margin-left: 15%;
+`;
+
 
 const Create = (props) => {
     const initialMember = { name: "", nickname: "", role: "", email: "" };
@@ -17,6 +16,7 @@ const Create = (props) => {
         <div>
             <Card>
             <form>
+                <CenteredForm>
                 <h2>New Team Member</h2>
                 <div className='input-stack'>
                     <label for='name'>Name</label>
@@ -44,7 +44,9 @@ const Create = (props) => {
                     <label for='Email'>Email Address</label>
                     <input type='text' name='email' className='email' placeholder='name123@email.com'/>
                 </div>
-
+                </CenteredForm>
+                <Button className="formButton" variant="dark">Submit</Button>
+                <Button variant="dark">Reset</Button>
             </form>
             </Card>
         </div>
