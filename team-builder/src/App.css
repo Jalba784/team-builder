@@ -1,0 +1,11 @@
+.input-stack {
+    display: flex;
+    flex-direction: column-reverse;
+}
+input, select {
+    border-radius: 10px;
+    width: 50%;
+}
+.formButton {
+    margin: 0px 5px 0px 20%;
+}
